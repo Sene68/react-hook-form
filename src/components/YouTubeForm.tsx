@@ -41,7 +41,7 @@ export const YouTubeForm = () => {
             }
         },
     })
-    const { register, control, handleSubmit, formState, watch, getValues } = form
+    const { register, control, handleSubmit, formState, watch, getValues, setValue } = form
     const { errors } = formState
 
     const { fields, append, remove } = useFieldArray({
@@ -55,6 +55,14 @@ export const YouTubeForm = () => {
 
     const handleGetValues = () => {
         console.log("Get values", getValues(["username", "channel"]))
+    }
+
+    const handleSetValues = () => {
+        setValue("username", "", {
+            shouldValidate: true,
+            shouldDirty: true,
+            shouldTouch: true
+        })
     }
 
     useEffect(() => {
@@ -185,6 +193,7 @@ export const YouTubeForm = () => {
 
                 <button>Submit</button>
                 <button onClick={() => handleGetValues()}>Get Values</button>
+                <button onClick={() => handleSetValues()}>Set Values</button>
             </form>
             <DevTool control={control} />
         </div>
