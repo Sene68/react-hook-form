@@ -42,9 +42,10 @@ export const YouTubeForm = () => {
         },
     })
     const { register, control, handleSubmit, formState, watch, getValues, setValue } = form
-    const { errors, touchedFields, dirtyFields, isDirty, isValid } = formState
+    const { errors, touchedFields, dirtyFields, isDirty, isValid, isSubmitting } = formState
 
-    console.log(touchedFields, dirtyFields, isDirty, isValid)
+    console.log({ isSubmitting })
+    // console.log(touchedFields, dirtyFields, isDirty, isValid)
 
     const { fields, append, remove } = useFieldArray({
         name: "phNumbers",
