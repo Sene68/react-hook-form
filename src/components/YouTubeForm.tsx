@@ -42,9 +42,9 @@ export const YouTubeForm = () => {
         },
     })
     const { register, control, handleSubmit, formState, watch, getValues, setValue } = form
-    const { errors, touchedFields, dirtyFields, isDirty, isValid, isSubmitting, isSubmitted, isSubmitSuccessful } = formState
+    const { errors, touchedFields, dirtyFields, isDirty, isValid, isSubmitting, isSubmitted, isSubmitSuccessful, submitCount } = formState
 
-    console.log({ isSubmitting, isSubmitted, isSubmitSuccessful })
+    console.log({ isSubmitting, isSubmitted, isSubmitSuccessful, submitCount })
     // console.log(touchedFields, dirtyFields, isDirty, isValid)
 
     const { fields, append, remove } = useFieldArray({
