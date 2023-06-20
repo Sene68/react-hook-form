@@ -41,8 +41,8 @@ export const YouTubeForm = () => {
             }
         },
     })
-    const { register, control, handleSubmit, formState, watch, getValues, setValue } = form
-    const { errors, touchedFields, dirtyFields, isDirty, isValid, isSubmitting, isSubmitted, isSubmitSuccessful, submitCount } = formState
+    const { register, control, handleSubmit, formState, watch, getValues, setValue, reset } = form
+    const { errors, touchedFields, dirtyFields, isDirty, isValid, isSubmitting, isSubmitted, isSubmitSuccessful, submitCount, } = formState
 
     console.log({ isSubmitting, isSubmitted, isSubmitSuccessful, submitCount })
     // console.log(touchedFields, dirtyFields, isDirty, isValid)
@@ -202,6 +202,7 @@ export const YouTubeForm = () => {
                 </div>
 
                 <button disabled={!isDirty || !isValid}>Submit</button>
+                <button onClick={() => reset()}>Reset</button>
                 <button onClick={() => handleGetValues()}>Get Values</button>
                 <button onClick={() => handleSetValues()}>Set Values</button>
             </form>
