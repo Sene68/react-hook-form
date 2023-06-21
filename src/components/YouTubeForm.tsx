@@ -72,6 +72,12 @@ export const YouTubeForm = () => {
         })
     }
 
+    useEffect(() => {
+        if (isSubmitSuccessful) {
+            reset()
+        }
+    }, [isSubmitSuccessful, reset])
+
     // useEffect(() => {
     //     const subscription =  watch((value) => {
     //         console.log(value)
